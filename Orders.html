@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bhadela Trading</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #333;
+        }
+
+        header small {
+            font-size: 18px;
+            color: #888;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav li {
+            display: inline;
+            padding: 8px 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* OrderPallete Section */
+        .OrderPallete {
+            background-color: #fff;
+            width: 90%;
+            max-width: 800px;
+            padding: 30px;
+            margin-left: 40vh;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .OrderPallete h1,
+        .OrderPallete h2 {
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        figure > img{
+            width:100px;
+            height:100px;
+        }
+
+        .OrderPallete h1 {
+            color: #d4af37;
+            font-size: 1.8em;
+        }
+
+        /* Form Styling */
+        form {
+            margin-bottom: 30px;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="tel"] {
+            padding: 10px;
+            width: calc(100% - 120px);
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #Reference {
+            font-weight: bold;
+            color: #d4af37;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #b59530;
+        }
+
+        /* Main Items Styling */
+        .MainItems {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .MainItems figure {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .MainItems figure:hover {
+            transform: scale(1.1);
+        }
+
+        .MainItems img {
+            width: 100px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .MainItems figcaption {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Items Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        table th {
+            background-color: #f5f5f5;
+        }
+
+        table input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .MainItems,
+            .additives {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        /* General Responsive Adjustments */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .OrderPallete {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .MainItems {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header small {
+        font-size: 16px;
+    }
+
+    .OrderPallete {
+        padding: 20px;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .MainItems img {
+        width: 80px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"],
+    form input[type="tel"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav li {
+        padding: 8px 0;
+    }
+
+    .OrderPallete h1,
+    .OrderPallete h2 {
+        font-size: 1.2em;
+    }
+    .OrderPallete{
+        margin-left: 0%;
+    }
+    .MainItems {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .MainItems figure {
+        width: 100%;
+    }
+
+    .MainItems img {
+        width: 60px;
+    }
+
+    form input[type="text"],
+    form input[type="tel"] {
+        width: 100%;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .OrderPallete h1 {
+        font-size: 1em;
+    }
+    .OrderPallete{
+        margin-left: 0%;
+    }
+
+    form label {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+    </style>
+        <script>
+            function ClientHandle() {
+                let Client = {
+                    name: document.getElementById("name").value,
+                    surname: document.getElementById("Surname").value,
+                    cellphone: document.getElementById("cellphone").value,
+                    reference: function () {
+                        let part1 = this.name.slice(0, 1);
+                        let part2 = this.surname.slice(0, 3);
+                        let part3 = this.cellphone.slice(-4);
+                        let final = part1.toUpperCase() + part2.toUpperCase() + part3;
+                        document.getElementById("Reference").innerHTML = final;
+                    }
+                };
+                Client.reference();
+            }
+            
+            function CheckIfFilled() {
+                let name = document.getElementById("name").value;
+                let surname = document.getElementById("Surname").value;
+                let cellphone = document.getElementById("cellphone").value;
+                if (!name || !surname || !cellphone) {
+                    alert("Please fill in all fields and generate a reference number.");
+                    return false;
+                }
+                return true;
+            }
+            
+            function calculatePrice(itemId, quantityId, pricePerUnit) {
+                let quantity = parseInt(document.getElementById(quantityId).value) || 0;
+                document.getElementById(itemId).innerHTML = "R" + (quantity * pricePerUnit);
+                calculateTotal(); // Update total after each price change
+            }
+            
+            function calculateTotal() {
+                const itemPrices = ["Item1price", "Item2price", "Item3price"];
+                let total = itemPrices.reduce((acc, item) => {
+                    const price = parseFloat(document.getElementById(item).innerText.slice(1)) || 0;
+                    return acc + price;
+                }, 0);
+                document.getElementById("TotalPrice").innerText = "R" + total;
+            }
+            
+            function generateContentSummary() {
+                let summary = "Selected Items:\n";
+                const items = [
+                    { id: "item1Qty", name: "Mobile fridge", price: 2000 },
+                    { id: "item2Qty", name: "Chairs", price: 10 },
+                    { id: "item3Qty", name: "2-Pole Tent", price: 1000 }
+                ];
+            
+                items.forEach(item => {
+                    const quantity = parseInt(document.getElementById(item.id).value) || 0;
+                    if (quantity > 0) {
+                        summary += `${item.name}: ${quantity} x R${item.price} = R${quantity * item.price}\n`;
+                    }
+                });
+            
+                return summary;
+            }
+            
+            function submitOrder() {
+                if (CheckIfFilled()) {
+                    const name = document.getElementById("name").value;
+                    const surname = document.getElementById("Surname").value;
+                    const cellphone = document.getElementById("cellphone").value;
+                    const reference = document.getElementById("Reference").innerText;
+                    const total = document.getElementById("TotalPrice").innerText;
+                    const contentSummary = generateContentSummary();
+            
+                    const orderSummary = `Order Reference: ${reference}\nCustomer Name: ${name} ${surname}\nCellphone: ${cellphone}\nTotal: ${total}\n\n${contentSummary}`;
+            
+                    alert("Order placed successfully! An email with your order details will be sent to the site owner.\n\n" + orderSummary);
+                    
+                    const mailtoLink = `mailto:andagwele1@gmail.com,bhadelatradinghire1@gmail.com?subject=Order For Rentals&body=${encodeURIComponent(orderSummary)}`;
+                    window.location.href = mailtoLink;
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+
+        <!-- Header Section -->
+        <header>
+            <img id="Emblem" src="Bhire emblem.jpg" alt="Emblem">
+            <h1>Bhadela Trading $ Projects</h1>
+            <small>The Best In Town</small>
+        </header>
+
+        <!-- Navigation Section -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Prices.html">Prices</a></li>
+                <li><a href="events.html">Past Events</a></li>
+                <li><a href="Orders.html">Orders</a></li>
+            </ul>
+        </nav>
+
+        <section class="OrderPallete">
+            <h1>Place Your Order</h1>
+
+            <!-- Customer Information Form -->
+            <form id="orderForm" onsubmit="submitOrder(); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" oninput="ClientHandle()"
+                    required><br>
+
+                <label for="Surname">Surname:</label>
+                <input type="text" id="Surname" oninput="ClientHandle()"
+                    required><br>
+
+                <label for="cellphone">Cellphone:</label>
+                <input type="tel" id="cellphone" oninput="ClientHandle()"
+                    required><br>
+
+                <h2>Your Order Reference: <span id="Reference"></span></h2>
+                <h2>Total Price: <span id="TotalPrice">R0</span></h2>
+
+                <!-- Main Items Section -->
+                <div class="MainItems">
+                    <figure>
+                        <img src="mobile-fridge.jpg" alt="Item 1">
+                        <figcaption>Mobile Fridge</figcaption>
+                        <label for="item1Qty">Quantity:</label>
+                        <input type="number" id="item1Qty" min="0" value="0"
+                            onchange="calculatePrice('Item1price', 'item1Qty', 2000)">
+                        <p id="Item1price">R0</p>
+                    </figure>
+                    <figure>
+                        <img src="chairs.jpeg" alt="Item 2">
+                        <figcaption>Chairs</figcaption>
+                        <label for="item2Qty">Quantity:</label>
+                        <input type="number" id="item2Qty" min="0" value="0"
+                            onchange="calculatePrice('Item2price', 'item2Qty', 10)">
+                        <p id="Item2price">R0</p>
+                    </figure>
+                    <figure>
+                        <img src="Tent.jpg" alt="Item 3">
+                        <figcaption> 2-Pole Tent</figcaption>
+                        <label for="item3Qty">Quantity:</label>
+                        <input type="number" id="item3Qty" min="0" value="0"
+                            onchange="calculatePrice('Item3price', 'item3Qty', 1000)">
+                        <p id="Item3price">R0</p>
+                    </figure>
+                </div>
+
+                <button type="submit">Submit Order</button>
+            </form>
+        </section>
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a
+                            href="mailto:info@example.com">bhadelatradinghire1@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+27 64 789 8126">064 789 8126</a></p>
+                    <p>Phone: <a href="tel:+27 72 873 3484">07 873 3484</a></p>
+                    <p>Address: Mdanstane nu9</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com"
+                                target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com"
+                                target="_blank">Twitter</a></li>
+                        <li><a href="https://www.instagram.com"
+                                target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms and Conditions
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <small>&copy; 2024 Bhadela Trading & Products. All
+                            rights
+                            reserved.</small>
+                    </div>
+                </footer>
+
+            </body>
+        </html>
